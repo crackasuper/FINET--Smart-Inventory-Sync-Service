@@ -3,10 +3,9 @@
 from celery import shared_task
 import pandas as pd # for csv file handling
 from .models import Product # import the Product model
-from pathlib import Path
-#base directory path that help us to identify the location of csv file
-BASE_DIR = Path(__file__).resolve().parent.parent
-CSV_URL = BASE_DIR / "mock_data" / "inventory_data.csv" #path to csv file
+
+#i am reading csv file from github repo directly
+CSV_URL = "https://github.com/crackasuper/FINET--Smart-Inventory-Sync-Service/blob/main/FINET/inventory_services/mock_data/inventory_services.csv"
 
 @shared_task
 def sync_inventory():
