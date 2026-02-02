@@ -1,11 +1,11 @@
 
-# Smart Inventory Sync Service (Django + React)
+# FINET Smart Inventory Sync Service (Django + React)
 
 ## Project Idea
 
 The **Smart Inventory Sync Service** is a lightweight ERP-style system that manages product inventory and keeps stock levels synchronized with an external supplier feed. The system automatically fetches inventory updates from a CSV source, processes them in the background, and exposes updated data to a React-based frontend dashboard.
 
-The goal is to demonstrate **backend–frontend integration**, **background processing**, and **clean system design**, similar to real-world ERP inventory modules.
+
 
 ---
 
@@ -53,7 +53,7 @@ The backend stores inventory data using the following schema:
 * A **Celery background task** periodically fetches a CSV file from a configured URL.
 * The CSV file is parsed row by row.
 * Product quantities are updated or created in the database.
-* Sync runs automatically based on a scheduled interval (e.g., every 5 minutes).
+* Sync runs automatically
 
 ### Why Background Tasks?
 
@@ -120,8 +120,8 @@ This trade-off mirrors real-world ERP systems.
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd smart-inventory-sync-service
+git clone https://github.com/crackasuper/FINET--Smart-Inventory-Sync-Service.git
+cd FINET--Smart-Inventory-Sync-Service.git
 ```
 
 ---
@@ -131,8 +131,8 @@ cd smart-inventory-sync-service
 Create and activate virtual environment:
 
 ```bash
-python -m venv venv
-source venv/bin/activate   # Linux/macOS
+python -m venv FINET
+source FINET/bin/activate   # Linux/macOS
 venv\Scripts\activate      # Windows
 ```
 
