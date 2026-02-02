@@ -1,7 +1,4 @@
-
-#this page contains csv file data
-sku,quantity
-SKU-1001,50
-SKU-1002,7
-SKU-1003,0
-SKU-1004,120
+sku,name,quantity
+PRD-001,Monitor,20
+PRD-002,Mouse,3
+PRD-003,Keyboard,0

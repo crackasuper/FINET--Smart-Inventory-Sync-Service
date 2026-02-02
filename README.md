@@ -121,7 +121,8 @@ This trade-off mirrors real-world ERP systems.
 
 ```bash
 git clone https://github.com/crackasuper/FINET--Smart-Inventory-Sync-Service.git
-cd FINET--Smart-Inventory-Sync-Service.git
+cd FINET--Smart-Inventory-Sync-Service
+cd /inventory_services/inventory_services
 ```
 
 ---
@@ -133,22 +134,26 @@ Create and activate virtual environment:
 ```bash
 python -m venv FINET
 source FINET/bin/activate   # Linux/macOS
-venv\Scripts\activate      # Windows
+
 ```
 
 Install dependencies:
 
 ```bash
 pip install -r requirements.txt
+or
+pip install django djangorestframework django-cors-headers celery redis django-celery-beat pandas
+
 ```
 
 Run migrations:
 
 ```bash
+cd FINET/inventory_services/inventory_services
 python manage.py migrate
 ```
 
-Create admin user (optional):
+Create admin user:
 
 ```bash
 python manage.py createsuperuser
@@ -169,10 +174,13 @@ http://127.0.0.1:8000
 ---
 
 ### 3. Redis Setup
-
+install Redis
+sudo apt update
+sudo apt install redis-server
 Start Redis server:
 
 ```bash
+#on Terminal 1 run 
 redis-server
 ```
 
@@ -180,41 +188,57 @@ Verify:
 
 ```bash
 redis-cli ping
-# PONG
+# PONG will be printed
 ```
 
 ---
 
 ### 4. Celery Worker & Scheduler
 
+start Redis-server:
+```bash
+#on Terminal 1 run 
+redis-server
+```
+
 Start Celery worker:
 
 ```bash
-celery -A inventory_service worker -l info
+#on Terminal 2 run
+celery -A inventory_services worker -l info
 ```
 
 Start Celery beat (scheduler):
 
 ```bash
-celery -A inventory_service beat -l info
+#on Terminal 3 run
+celery -A inventory_services beat -l info
+```
+Start backend running:
+#on Terminal 4 run this
+```bash
+python3 manage.py runsserver
 ```
 
 The inventory sync task will now run automatically.
 
 ---
+###N.B make sure you are at correct directory
+-> FINET--Smart-Inventory-Sync-Service/FINET/inventory_services
 
 ### 5. Frontend Setup
 
 Navigate to frontend folder:
 
 ```bash
-cd frontend
+cd /FINET--Smart-Inventory-Sync-Service/FINET/inventory-services-ui
 ```
 
 Install dependencies:
 
 ```bash
 npm install
+npm install axios bootstarp
 ```
 
 Start React app:
@@ -230,10 +254,3 @@ http://localhost:3000
 ```
 
 ---
-
-
-
-## Author
-
-**Sadem Hussen**
-Full Stack Python & React Developer
