@@ -1,6 +1,6 @@
 
 #this page contains csv file data
-sku,name ,quantity
+sku,name,quantity
 SKU-101, pvc printer,50
 SKU-1002,bags,7
 SKU-1003,wireless headpones,0
