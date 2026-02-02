@@ -20,10 +20,7 @@ def sync_inventory():
   
 
     response = requests.get(CSV_URL)
-    print(response.status_code)
-    print(response.text[:500])  # first 500 characters
-
-    
+   
 
 
     for row in reader:
