@@ -9,4 +9,4 @@ const api = axios.create({
 });
 
 export const fetchProducts = () => 
-    axios.get("http://127.0.0.1:8000/api/products/"); //use your backend server address here
+    axios.get("http://127.0.0.1:8000/api/inventory/products/"); //This will load our data from backend
