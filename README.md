@@ -3,7 +3,7 @@
 
 ## Project Idea
 
-The **Smart Inventory Sync Service** is a lightweight ERP-style system that manages product inventory and keeps stock levels synchronized with an external supplier feed. The system automatically fetches inventory updates from a CSV source, processes them in the background, and exposes updated data to a React-based frontend dashboard.
+The **Smart Inventory Sync Service** is a lightweight ERP-style system that manages product inventory and keeps stock levels synchronized with an external supplier feed. The system automatically fetches inventory updates from a CSV source, processes them in the background, and exposes updated data to a user friendly understandable dashboard.
 
 
 
