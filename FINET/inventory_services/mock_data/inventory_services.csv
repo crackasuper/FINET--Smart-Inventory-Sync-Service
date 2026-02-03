@@ -1,1 +1,8 @@
 
+#this page contains csv data files
+
+sku,name,quantity
+sku-123,headset,50
+10023,phones,20
+10032,laptops,9
+1230,watchs,0
