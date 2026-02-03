@@ -17,6 +17,9 @@ def sync_inventory():
     csv_file = StringIO(response.text)
     reader = csv.DictReader(csv_file)
     print("HEADERS:", reader.fieldnames)
+    print("CSV URL:", CSV_URL)
+    print("Response Status Code:", response.status_code)
+    print("Response Content:", response.text[:500])  # Print first 500 characters of the response content
   
 
     response = requests.get(CSV_URL)
